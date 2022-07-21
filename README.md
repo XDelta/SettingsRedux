@@ -1,6 +1,6 @@
 ﻿# SettingsRedux
 
-A [NeosModLoader](https://github.com/neos-modding-group/NeosModLoader) mod for [Neos VR](https://neos.com/). Replaces the Neos Settings page with something new.
+A [NeosModLoader](https://github.com/neos-modding-group/NeosModLoader) mod for [Neos VR](https://neos.com/). Replaces the default Neos Settings page with an enhanced settings page that adds in many QoL changes.
 ![image](https://user-images.githubusercontent.com/7883807/180164737-1072b203-5970-40e5-b7d0-6075249f3995.png)
 
 
