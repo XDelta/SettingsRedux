@@ -192,7 +192,7 @@ namespace SettingsRedux {
 				switch (tab) {
 					case Tabs.Audio:
 						AddHeaderText(ui, "Settings.Audio.Header");
-						AddMasterAudioSlider(ui, "Settings.Audio.Master", audioSettingSync.MasterVolume);
+						AddAudioDriveSlider(ui, "Settings.Audio.Master", audioSettingSync.MasterVolume, "<b>{0}</b>");
 						AddAudioSlider(ui, "Settings.Audio.SoundEffects", AudioTypeGroup.SoundEffect);
 						AddAudioSlider(ui, "Settings.Audio.Multimedia", AudioTypeGroup.Multimedia);
 						AddAudioSlider(ui, "Settings.Audio.Voice", AudioTypeGroup.Voice);
@@ -383,12 +383,12 @@ namespace SettingsRedux {
 				quantityTextEditorParser.IgnoreOutOfRange.Value = true;
 			}
 
-			public static void AddMasterAudioSlider(UIBuilder ui, string localeString, IField driveFromSource) {
+			public static void AddAudioDriveSlider(UIBuilder ui, string localeString, IField driveFromSource, string format = null) {
 				Text text = ui.Text("", true, null, true, null);
 				Slider<float> slider = ui.Slider(ui.Style.MinHeight, 0f, 0f, 1f, false);
 				slider.Power.Value = (Config.GetValue(useLinearSliders)? 1f : 0.5f);
 				//System.MissingMethodException: FrooxEngine.LocaleStringDriver FrooxEngine.LocaleHelper.DriveLocalized(FrooxEngine.IField`1<string>,string,string,System.ValueTuple`2<string, object>[])
-				text.Content.DriveLocalized(localeString, "<b>{0}</b>", new ValueTuple<string, object>[] {
+				text.Content.DriveLocalized(localeString, format, new ValueTuple<string, object>[] {
 					new ValueTuple<string, object>("n", slider.Value)
 				});
 				
