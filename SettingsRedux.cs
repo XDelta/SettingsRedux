@@ -129,10 +129,8 @@ namespace SettingsRedux {
 			private static void GenerateHeader() {
 				UIBuilder ui = new UIBuilder(settingsDialog.Slot, null);
 				RadiantUI_Constants.SetupDefaultStyle(ui, false);
-				RectTransform top;
-				RectTransform bottom;
-				ui.SplitVertically(0.05f, out top, out bottom, 0.02f);
-				ui.NestInto(top);
+                ui.SplitVertically(0.05f, out RectTransform top, out RectTransform bottom, 0.02f);
+                ui.NestInto(top);
 				ui.HorizontalLayout(4);
 
 				Button tabAudio = ui.Button("Audio");
@@ -172,10 +170,8 @@ namespace SettingsRedux {
 				UpdateActiveTab(tab);
 
 				RadiantUI_Constants.SetupDefaultStyle(ui, false);
-				RectTransform top;
-				RectTransform bottom;
-				ui.SplitVertically(0.05f, out top, out bottom, 0.02f);
-				ui.NestInto(top);
+                ui.SplitVertically(0.05f, out RectTransform top, out RectTransform bottom, 0.02f);
+                ui.NestInto(top);
 				//ui.TextField(tab.ToString()); //Label the tab you are currently on
 				ui.NestOut();
 				ui.NestInto(bottom);
