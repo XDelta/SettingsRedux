@@ -7,10 +7,8 @@ using HarmonyLib;
 using NeosModLoader;
 using System.Collections.Generic;
 using FrooxEngine.CommonAvatar;
-using System.Linq;
 using QuantityX;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace SettingsRedux {
 	public class SettingsRedux : NeosMod {
@@ -320,7 +318,6 @@ namespace SettingsRedux {
 
 			public static void AltLineColor(RectTransform rect) {
 				var currentLine = 0;
-				var count = rect.Slot.ChildrenCount;
 				foreach (var slot in rect.Slot.GetAllChildren()) {
 					//Debug(slot.Name + ":" + currentLine);
 					if (slot.Name == "Panel" && slot.Parent.Name == "Content") {
