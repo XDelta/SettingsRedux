@@ -197,11 +197,11 @@ namespace SettingsRedux {
 						AddAudioSlider(ui, "Settings.Audio.Multimedia", AudioTypeGroup.Multimedia);
 						AddAudioSlider(ui, "Settings.Audio.Voice", AudioTypeGroup.Voice);
 						AddAudioSlider(ui, "Settings.Audio.UI", AudioTypeGroup.UI);
-
+						AddAudioDriveSlider(ui, "Settings.Audio.WhisperVoiceVolume", audioSettingSync.WhisperVoiceVolume);
 						AddCheckboxDrive(ui, "Settings.Audio.DisableVoiceNormalization", audioSettingSync.DisableNormalization);
+						AddAudioDriveSlider(ui, "Settings.Audio.NormzliationThreshold", audioSettingSync.NormalizationThreshold);
 						AddCheckboxDrive(ui, "Settings.Audio.NoiseSupression", audioSettingSync.NoiseSupression);
-						AddMasterAudioSlider(ui, "Settings.Audio.WhisperVoiceVolume", audioSettingSync.WhisperVoiceVolume);
-						AddMasterAudioSlider(ui, "Settings.Audio.NormzliationThreshold", audioSettingSync.NormalizationThreshold);
+						AddAudioDriveSlider(ui, "Settings.Audio.NoiseGateThreshold", audioSettingSync.NoiseGateThreshold);
 						AddButton(ui, "Settings.Audio.SelectInputDevice", new ButtonEventHandler(OnSelectAudioInputDevice), 2f);
 						AddButton(ui, "Settings.Audio.SelectOutputDevice", new ButtonEventHandler(OnSelectAudioOutputDevice), 2f);
 						AddButton(ui, "Settings.Save", new ButtonEventHandler(OnSaveSettings));
