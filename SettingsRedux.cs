@@ -14,7 +14,7 @@ namespace SettingsRedux {
 	public class SettingsRedux : NeosMod {
 		public override string Name => "SettingsRedux";
 		public override string Author => "XDelta";
-		public override string Version => "1.0.0";
+		public override string Version => "1.1.0";
 		public override string Link => "https://github.com/XDelta/SettingsRedux";
 
 		[AutoRegisterConfigKey]
