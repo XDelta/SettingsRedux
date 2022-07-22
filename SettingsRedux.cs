@@ -22,6 +22,9 @@ namespace SettingsRedux {
 		[AutoRegisterConfigKey]
 		private static readonly ModConfigurationKey<bool> enableSettingReplacement = new ModConfigurationKey<bool>("enableSettingReplacement", "Replace default Neos settings page", () => true);
 
+		[AutoRegisterConfigKey]
+		private static readonly ModConfigurationKey<bool> useLinearSliders = new ModConfigurationKey<bool>("useLinearSliders", "Use linear sliders", () => false);
+
 		private static ModConfiguration Config;
 
 		public override void OnEngineInit() {
@@ -383,7 +386,7 @@ namespace SettingsRedux {
 			public static void AddMasterAudioSlider(UIBuilder ui, string localeString, IField driveFromSource) {
 				Text text = ui.Text("", true, null, true, null);
 				Slider<float> slider = ui.Slider(ui.Style.MinHeight, 0f, 0f, 1f, false);
-				slider.Power.Value = 0.5f;
+				slider.Power.Value = (Config.GetValue(useLinearSliders)? 1f : 0.5f);
 				//System.MissingMethodException: FrooxEngine.LocaleStringDriver FrooxEngine.LocaleHelper.DriveLocalized(FrooxEngine.IField`1<string>,string,string,System.ValueTuple`2<string, object>[])
 				text.Content.DriveLocalized(localeString, "<b>{0}</b>", new ValueTuple<string, object>[] {
 					new ValueTuple<string, object>("n", slider.Value)
@@ -402,7 +405,7 @@ namespace SettingsRedux {
 			public static void AddAudioSlider(UIBuilder ui, string localeString, AudioTypeGroup audioTypeGroup) {
 				Text text2 = ui.Text(localeString, true, null, true, null);
 				Slider<float> slider = ui.Slider(ui.Style.MinHeight, 0f, 0f, 1f, false);
-				slider.Power.Value = 0.5f;
+				slider.Power.Value = (Config.GetValue(useLinearSliders) ? 1f : 0.5f);
 				AudioTypeGroupVolumeSlider audioTypeGroupVolumeSlider = ui.Current.AttachComponent<AudioTypeGroupVolumeSlider>(true, null);
 				audioTypeGroupVolumeSlider.Slider.Target = slider;
 				audioTypeGroupVolumeSlider.Group.Value = audioTypeGroup;
