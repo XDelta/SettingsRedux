@@ -93,14 +93,13 @@ namespace SettingsRedux {
 					}
 				}
 			}
-			//TODO Don't setup the original at all?, for now it is just hidden so you can toggle between the two on the fly
-			public static void Postfix(SettingsDialog __instance) {
-				__instance.Slot.AttachComponent<DuplicateBlock>(true, null);
+            //TODO Don't setup the original at all?, for now it is just hidden so you can toggle between the two on the fly
+            public static void Postfix(SettingsDialog __instance, SyncRef<QuantityTextEditorParser<Distance>> ____heightField, Sync<bool> ____useImperial) {
+                __instance.Slot.AttachComponent<DuplicateBlock>(true, null);
 				settingsDialog = __instance;
-
-				_heightField = AccessTools.Field(typeof(SettingsDialog), "_heightField").GetValue(settingsDialog) as SyncRef<QuantityTextEditorParser<Distance>>;
-				_useImperial = AccessTools.Field(typeof(SettingsDialog), "_useImperial").GetValue(settingsDialog) as Sync<bool>;
-				_OnSaveMethod = AccessTools.FirstMethod(typeof(SettingsDialog), (methodInfo) => methodInfo.Name == "OnSaveSettings");
+                _heightField = ____heightField;
+                _useImperial = ____useImperial;
+                _OnSaveMethod = AccessTools.FirstMethod(typeof(SettingsDialog), (methodInfo) => methodInfo.Name == "OnSaveSettings");
 
 				ActiveTab = Tabs.Misc;
 				GenerateHeader();
