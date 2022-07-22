@@ -52,7 +52,7 @@ namespace SettingsRedux {
 
 			private static Tabs ActiveTab = Tabs.Audio;
 			private static AudioSettingSync audioSettingSync;
-			private static float DefaultUiScale = 28f;
+			private static readonly float DefaultUiScale = 28f;
 
 			//private static SyncRefList<Button> _tabButtons; //.Add() always caused a NRE
 			private static Button b1;
