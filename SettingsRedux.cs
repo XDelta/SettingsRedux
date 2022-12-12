@@ -71,22 +71,21 @@ namespace SettingsRedux {
 						b3.SetColors(RadiantUI_Constants.BUTTON_COLOR);
 						b4.SetColors(RadiantUI_Constants.BUTTON_COLOR);
 						b5.SetColors(RadiantUI_Constants.BUTTON_COLOR);
-
 						switch (ActiveTab) {
 							case Tabs.Audio:
-								b1.SetColors(new color(0, 0.29f, 0.78f));
+								b1.SetColors(RadiantUI_Constants.HIGHLIGHT_COLOR);
 								break;
 							case Tabs.Controls:
-								b2.SetColors(new color(0, 0.29f, 0.78f));
+								b2.SetColors(RadiantUI_Constants.HIGHLIGHT_COLOR);
 								break;
 							case Tabs.Video:
-								b3.SetColors(new color(0, 0.29f, 0.78f));
+								b3.SetColors(RadiantUI_Constants.HIGHLIGHT_COLOR);
 								break;
 							case Tabs.Network:
-								b4.SetColors(new color(0, 0.29f, 0.78f));
+								b4.SetColors(RadiantUI_Constants.HIGHLIGHT_COLOR);
 								break;
 							case Tabs.Misc:
-								b5.SetColors(new color(0, 0.29f, 0.78f));
+								b5.SetColors(RadiantUI_Constants.HIGHLIGHT_COLOR);
 								break;
 							default:
 								break;
