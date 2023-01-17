@@ -28,7 +28,7 @@ namespace SettingsRedux {
 		public override void OnEngineInit() {
 			Config = GetConfiguration();
 			Config.Save(true);
-			Harmony harmony = new Harmony("tk.deltawolf.SettingsRedux");
+			Harmony harmony = new Harmony("net.deltawolf.SettingsRedux");
 			harmony.PatchAll();
 			Config.OnThisConfigurationChanged += delegate { SettingsDialog_OnAttach_Patch.HideDefaultUi(); };
 		}
