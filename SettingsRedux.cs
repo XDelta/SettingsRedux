@@ -15,7 +15,7 @@ namespace SettingsRedux;
 public class SettingsRedux : ResoniteMod {
 	public override string Name => "Settings Redux";
 	public override string Author => "Delta";
-	public override string Version => "2.0.0";
+	public override string Version => "2.1.0";
 	public override string Link => "https://github.com/XDelta/SettingsRedux";
 
 	[AutoRegisterConfigKey]
